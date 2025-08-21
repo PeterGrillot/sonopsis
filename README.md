@@ -1,36 +1,86 @@
 # Sonopsis - Music Collaboration Tool
 
+Sonopsis is a web application for musicians and bands to collaborate, share ideas, and manage projects together. Built with Next.js, Prisma, and Radix UI, Sonopsis makes it easy to organize bands, share lyrics, upload clips, and communicate with your team.
+
+## Features
+
+- **User Management:** Register, view, and manage users with profile images.
+- **Bands & Memberships:** Create bands, invite members, and assign roles.
+- **Lyrics & Clips:** Share lyric ideas and upload audio clips for collaboration.
+- **Comments:** Discuss ideas and give feedback on lyrics and clips.
+- **API Endpoints:** RESTful endpoints for users, bands, and more.
+- **Modern UI:** Built with Radix UI for a clean, accessible interface.
+
 ## Getting Started
 
-First, run the development server:
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/yourusername/sonopsis-app.git
+cd sonopsis-app
+```
+
+### 2. Install dependencies
+
+```bash
+npm install
+```
+
+### 3. Set up the database
+
+- Copy `.env.example` to `.env` and set your `DATABASE_URL`.
+- Start your database (Postgres recommended, Docker supported).
+- Run Prisma migrations:
+
+```bash
+npx prisma migrate dev
+```
+
+### 4. Seed the database (optional)
+
+```bash
+npx ts-node prisma/seed.ts
+```
+
+### 5. Start the development server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- `/src/app` - Next.js App Router pages and API routes
+- `/src/components` - React UI components
+- `/prisma` - Prisma schema and seed scripts
+- `/lib` - Shared utilities (e.g., Prisma client)
+- `/public/uploads` - (Optional) Local image/audio uploads
 
-## Learn More
+## API Endpoints
 
-To learn more about Next.js, take a look at the following resources:
+- `GET /api/users` - List users with memberships
+- `GET /api/users/[id]` - Get user details
+- More endpoints for bands, clips, lyrics, etc.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Technologies Used
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- [Next.js](https://nextjs.org/)
+- [Prisma](https://www.prisma.io/)
+- [Radix UI](https://www.radix-ui.com/)
+- [PostgreSQL](https://www.postgresql.org/)
+- [Docker](https://www.docker.com/) (optional for DB)
 
-## Deploy on Vercel
+## Contributing
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Contributions are welcome! Please open issues or submit pull requests.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## License
+
+MIT
+
+## Acknowledgements
+
+- [Next.js](https://nextjs.org/)
+- [Prisma](https://www.prisma.io/)
